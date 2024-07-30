@@ -1,0 +1,19 @@
+document.addEventListener('DOMContentLoaded', function() {
+    function isElementVisible(el) {
+        return el && el.offsetWidth > 0 && el.offsetHeight > 0;
+    }
+
+    var helpIcon = document.getElementById('hl_header--help-icon');
+    if (helpIcon && isElementVisible(helpIcon)) {
+        console.log('#hl_header--help-icon is visible. Hiding .fa .fa-question.');
+
+        var questionIcon = document.querySelector('.fa.fa-question');
+        if (questionIcon) {
+            questionIcon.style.display = 'none';
+        } else {
+            console.log('.fa .fa-question element not found.');
+        }
+    } else {
+        console.log('#hl_header--help-icon is not visible.');
+    }
+});
